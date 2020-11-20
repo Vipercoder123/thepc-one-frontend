@@ -19,7 +19,6 @@ function CreateEvent(props){
    
     const onChange = (imageList, addUpdateIndex) => {
       // data for submit
-      console.log(imageList, addUpdateIndex);
       setImages(imageList);
     }
 
@@ -49,10 +48,8 @@ function CreateEvent(props){
       function handleSubmit()
       {  
         setEventDetails(abc)    
-        console.log(eventDetails)
-        console.log(images)
         axios.post(link,eventDetails,{headers: {authorization:header}})
-                .then(res => {console.log(res.data)
+                .then(res => {
                   if(res.dateCreated)
                   setFormStatus('Event Created')
                   ;})

@@ -16,7 +16,6 @@ function Eventshome(props){
     function eventsRegister(val){
         let link='https://thepc-one.herokuapp.com/api/user/'+val.eventID
         let header='Bearer '+(token.token)
-        console.log(header)
           axios.patch(link,{},{headers: {authorization:header}})
                   .then(res => {setData(res.data)})
         swal("Event Registered", "Successfully", "success",{
@@ -28,10 +27,8 @@ function Eventshome(props){
     }
 
     function eventsRefresh(){
-        console.log("reg")
         axios.get('https://thepc-one.herokuapp.com/api/allEvents')
         .then((response) => {
-            console.log(response);
             setEventsList(response.data);
         }, (error) => {
             console.log(error);
@@ -41,7 +38,6 @@ function Eventshome(props){
     useEffect(() => {
         axios.get('https://thepc-one.herokuapp.com/api/allEvents')
         .then((response) => {
-            console.log(response);
             setEventsList(response.data);
         }, (error) => {
             console.log(error);

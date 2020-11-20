@@ -5,7 +5,6 @@ import swal from '@sweetalert/with-react'
 function SignUp(props){
     function loginStateHandler(val,data){
       props.loginStateHandler(val,data)
-      console.log('Passed');
     }
     const [name,setName]=useState("")
     const [email,setEmail]=useState("")
@@ -17,8 +16,6 @@ function SignUp(props){
       {
         e.preventDefault()
         if(signupFormValidator()){
-        console.log("clicked")
-        console.log(name,email,pass,cnfpass)
         axios.post('https://thepc-one.herokuapp.com/api/user/signup',
         {
           email:email,
@@ -27,7 +24,6 @@ function SignUp(props){
           name: name
         })
         .then((response) => {
-          console.log(response);
           if(response.status===200)
             loginStateHandler(true,response.data)
             setWarning("")

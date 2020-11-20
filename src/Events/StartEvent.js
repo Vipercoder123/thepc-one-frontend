@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 function StartEvent(props){
     const numTextBoxes=props.eventData.numTextBoxes
     const eventData=props.eventData
-    console.log(eventData)
 
     function CardsToggle(){
         props.CardsToggle()

@@ -19,7 +19,6 @@ function LoginGoogle(props) {
             username:name
         })
         .then((response) => {
-            console.log(response);
             if(response.status===200)
             loginStateHandler(true,response.data)
             swal("Logged In", "Successfully!", "success",{
@@ -33,9 +32,6 @@ function LoginGoogle(props) {
     }
 
     const onSuccess = (res) =>{
-        console.log("Success")
-        console.log(res.profileObj.email)
-        console.log(res.profileObj.name)
         LoginSync(res.profileObj.email,res.profileObj.name)
     }
     const onFailure = (res) =>{
