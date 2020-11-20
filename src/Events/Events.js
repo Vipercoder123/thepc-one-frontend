@@ -15,7 +15,7 @@ function Events(props){
         function pageSetter(val){props.pageSetter(val)}
         function logoutHandler(val){props.logoutHandler(val)}
         function setEventsList(val){props.setEventsList(val)}
-
+        console.log(eventsList)
         const todayDate = new Date()
 
         function formatDate(date) {
@@ -42,7 +42,7 @@ function Events(props){
               <br/>
               <br/>
               <br/>
-              {props.userData.memberType ===-1?<NonMember eventsList={eventsList} mDate={mDate} userData={data} userID={userID}/>:props.userData.memberType ===0?<Member eventsList={eventsList} mDate={mDate} userData={data} token={token} userID={userID}/>:props.userData.memberType ===1?<Admin eventsList={eventsList} setEventsList={setEventsList} mDate={mDate} userData={data} token={token} userID={userID}/>:<br/>}
+              {(props.userData.memberType ===-1)&&(eventsList)?<NonMember eventsList={eventsList} mDate={mDate} userData={data} userID={userID}/>:(props.userData.memberType ===0)&&(eventsList)?<Member eventsList={eventsList} mDate={mDate} userData={data} token={token} userID={userID}/>:(props.userData.memberType ===1)&&(eventsList)?<Admin eventsList={eventsList} setEventsList={setEventsList} mDate={mDate} userData={data} token={token} userID={userID}/>:<br/>}
             </>
         ) 
 }

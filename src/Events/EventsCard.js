@@ -6,10 +6,10 @@ function EventsCard(props){
     const mDate=props.mDate
     const buttonText=props.buttonText
     const userType=props.userType
-    const eventsData=props.eventsList
+    const eventsList=props.eventsList
     function handleEventState(val){props.handleEventState(val)}
     function eventStart(val){props.eventStart(val)}
-
+    console.log(eventsList)
     function MemberCards(data){
         let liveEventsList=LiveEventsCheck(data)
         let reqEventsList=ReqEventsCheck(data)
@@ -136,7 +136,7 @@ function EventsCard(props){
     return(
         <>
         {userType==0?<button className="btn btn-lg btn-block create-event" type="button" onClick={()=>handleEventState('Create')}>Create Event</button>:<></>}
-        {eventsData?MemberCards(eventsData):<></>}
+        {eventsList?MemberCards(eventsList):<></>}
         </>
     )}
 export default EventsCard
