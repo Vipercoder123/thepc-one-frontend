@@ -4,9 +4,7 @@ import Card from './Card/Card'
 function HomeCards(props){
     const userID=props.userData._id
 
-    function eventsRegister(val){
-        props.eventsRegister(val)
-    }
+    function eventsRegister(val){props.eventsRegister(val)}
 
     function regListCheck(obj){
         let regUsersList=[]

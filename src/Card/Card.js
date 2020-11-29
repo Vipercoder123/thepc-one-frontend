@@ -32,7 +32,6 @@ function Card(props) {
             button:false,
             timer:2000,
         });
-        console.log('Not logged in')
     }
     }
 

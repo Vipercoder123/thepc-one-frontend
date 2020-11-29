@@ -9,7 +9,7 @@ function EventsCard(props){
     const eventsList=props.eventsList
     function handleEventState(val){props.handleEventState(val)}
     function eventStart(val){props.eventStart(val)}
-
+    console.log(eventsList)
     function MemberCards(data){
         let liveEventsList=LiveEventsCheck(data)
         let reqEventsList=ReqEventsCheck(data)
@@ -138,7 +138,6 @@ function EventsCard(props){
         {userType==0?<button className="btn btn-lg btn-block create-event" type="button" onClick={()=>handleEventState('Create')}>Create Event</button>:<></>}
         {eventsList?MemberCards(eventsList):<></>}
         </>
-    )
-}
 
+    )}
 export default EventsCard

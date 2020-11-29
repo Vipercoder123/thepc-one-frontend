@@ -30,7 +30,9 @@ function Member(props){
     return(
         <>
         {/* <button className="btn btn-lg btn-primary btn-block create-event" type="button" onClick={()=>handleEventState('Create')}>Create Event</button> */}
+
          {((EventsState=='cards')&&(eventsSetter=='Cards')) ? <EventsCard  mDate={mDate} eventsList={eventsList} userType={0} buttonText='Details' handleEventState={handleEventState} eventStart={eventStart} userID={userID}/>:((EventsState=='Create'))?<CreateEvent token={token} handleEventState={handleEventState} eventsRefresh={eventsRefresh}/>:(eventsSetter=='Event')?<StartEvent eventData={startEventData} CardsToggle={CardsToggle}/>:<></>}
+
         </>
     )
 }

@@ -19,7 +19,6 @@ function CreateEvent(props){
    
     const onChange = (imageList, addUpdateIndex) => {
       // data for submit
-      console.log(imageList, addUpdateIndex)
       setImages(imageList);
     }
 
@@ -68,6 +67,7 @@ function CreateEvent(props){
       let link='https://thepc-one.herokuapp.com/api/newEvent'
       let header='Bearer '+(props.token.token)
       
+
       function handleSubmit(e)
       {  e.preventDefault()
         console.log(abc)
@@ -92,6 +92,15 @@ function CreateEvent(props){
                 ,(error) => {
                   console.log(error)
               })
+
+      function handleSubmit()
+      {  
+        setEventDetails(abc)    
+        axios.post(link,eventDetails,{headers: {authorization:header}})
+                .then(res => {
+                  if(res.dateCreated)
+                  setFormStatus('Event Created')
+                  ;})
         setEventDetails(defaultEvent)
         swal("Event created", "Successfully!", "success",{
           button:false,

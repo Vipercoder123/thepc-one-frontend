@@ -16,7 +16,6 @@ function NonMember(props){
     }
 
     function eventStart(val){
-        console.log(val)
         setEventPage('Event')
         setEventData(val)
     }

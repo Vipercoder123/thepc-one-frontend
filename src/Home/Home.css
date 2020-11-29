@@ -373,6 +373,13 @@
         margin-top: 2rem;
     }
 
+    .sidebar_loginText{
+        margin-top: 2rem;
+    }
+    .sidebar_signupText{
+        margin-top: 2rem;
+    }
+
     .sidebar_loginNotActive{
         width:100%;
         top:0px;
@@ -614,10 +621,12 @@
         margin-top: 10px;
     }
     .sidebar_loginText{
+
         margin-top: 3rem;
     }
     .sidebar_signupText{
         margin-top: 3rem;
+
     }
 
     .sidebar_loginNotActive{
@@ -736,6 +745,12 @@
         font-size:1.8rem;
         line-height:64px;
         margin-top: 10px;
+    }
+    .sidebar_loginText{
+        margin-top: 4rem;
+    }
+    .sidebar_signupText{
+        margin-top: 4rem;
     }
 
     .sidebar_loginNotActive{

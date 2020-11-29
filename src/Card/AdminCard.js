@@ -15,17 +15,13 @@ function AdminCard(props) {
     let header='Bearer '+(props.token.token)
 
     function eventsApprove(){
-        console.log(header)
+
         axios.post(link+'/true',
             {},
             {
                 headers: {authorization:header}
             })
                     .then(res => {
-                    console.log(res);
-                    console.log(res.data);
-                    }, (error) => {
-                        console.log(error)
                     }) 
                     swal("Event Approved", "Successfully!", "success",{
                         button:false,
@@ -35,16 +31,12 @@ function AdminCard(props) {
           }
 
     function eventsReject(){
-        console.log(header)
-        console.log(link+'/false')
         axios.post(link+'/false',
             {},
             {
                 headers: {authorization:header}
             })
                     .then(res => {
-                    console.log(res);
-                    console.log(res.data);
                     })
                     swal("Event Rejected", " ", "error",{
                         button:false,
@@ -53,6 +45,16 @@ function AdminCard(props) {
                     setTimeout(eventsRefresh(),8000)          
           }
         
+
+          function eventsRefresh(){
+            axios.get('https://thepc-one.herokuapp.com/api/allEvents')
+            .then((response) => {
+                setEventsList(response.data);
+            }, (error) => {
+                console.log(error);
+            })
+        }
+
 
     return (
         <div class="card-container navAfter">

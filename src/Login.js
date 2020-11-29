@@ -16,14 +16,12 @@ function Login(props){
         e.preventDefault()
         if(loginFormValidator())
         {
-        console.log(email,pass)
         axios.post('https://thepc-one.herokuapp.com/api/user/login',
         {
             email:email,
             password:pass
         })
         .then((response) => {
-            console.log(response);
             if(response.status===200)
             setWarning("")
             loginStateHandler(true,response.data)

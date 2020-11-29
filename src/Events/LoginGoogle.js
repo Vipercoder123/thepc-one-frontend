@@ -17,7 +17,6 @@ function LoginGoogle(props) {
             username:name
         })
         .then((response) => {
-            console.log(response);
             if(response.status===200)
             loginStateHandler(true,response.data)
             swal("Logged In", "Successfully!", "success",{
